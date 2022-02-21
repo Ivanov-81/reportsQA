@@ -2,35 +2,35 @@ import * as React from 'react';
 import {useEffect, useState} from "react";
 import Header from './Components/Header/Header';
 import Menu from './Components/Menu/Menu';
-import {Box, Container, CssBaseline} from "@mui/material";
+import Content from './Components/Content/Content';
+import {Box, Container, Grid, Paper, styled} from "@mui/material";
 
 import './App.css';
+import {Http} from "./classes/http";
 
 export default function App() {
 
     const [state, setState] = useState<boolean>(false);
 
     useEffect(() => {
-        console.log(state)
-    }, [state])
+        setTimeout(() => {
+            try {
+                const data: any = Http.get('./data/allData.json');
+                data
+                    .then((response: any) => response.json())
+                    .then((dt: any) => console.log(dt));
+            } catch (error: any) {
+                console.log(error);
+            }
+        }, 3000);
+    }, [])
 
     return (
         <>
-            <CssBaseline />
-            <Header state={state} setState={setState} />
-            <Menu state={state} setState={setState} />
-            <Container>
-                <Box sx={{ my: 2 }}>
-                    {[...new Array(12)]
-                        .map(
-                            () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-                        )
-                        .join('\n')}
-                </Box>
-            </Container>
+            <Header state={state} setState={setState}/>
+            <Menu state={state} setState={setState}/>
+            <Content />
         </>
-    );
+    )
+        ;
 }

@@ -172,6 +172,10 @@ export default function Header(props: IHeader) {
         </Menu>
     );
 
+    const openMenu = () => {
+        props.setState(true);
+    }
+
     return (
         <Box sx={{flexGrow: 1}}>
             <ThemeProvider theme={darkTheme}>
@@ -183,7 +187,7 @@ export default function Header(props: IHeader) {
                             color="inherit"
                             aria-label="open drawer"
                             sx={{mr: 2}}
-                            onClick={props.setState(props.state)}
+                            onClick={openMenu}
                         >
                             <MenuIcon/>
                         </IconButton>

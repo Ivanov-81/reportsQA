@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from "react";
+import {useState} from "react";
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
@@ -32,7 +32,6 @@ export default function Menu(props: IMenu) {
                 ) {
                     return;
                 }
-                console.log(open)
                 props.setState(open);
             };
 
