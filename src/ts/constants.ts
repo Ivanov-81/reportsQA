@@ -7,18 +7,8 @@ export const CHANGE_LOCATION: string = 'CHANGE_LOCATION';
 export const ADD_USER: string = 'ADD_USER';
 export const CHANGE_USER: string = 'CHANGE_USER';
 
-// Map
-export const ADD_MAP: string = "ADD_MAP";
-export const CHANGE_ZOOM: string = "CHANGE_ZOOM";
-export const CHANGE_CENTER: string = "CHANGE_CENTER";
-export const CHANGE_POINT: string = "CHANGE_POINT";
-export const CHANGE_POINTS: string = "CHANGE_POINTS";
-export const CHANGE_LINESTRING: string = "CHANGE_LINESTRING";
-export const CHANGE_POLYGON: string = "CHANGE_POLYGON";
-export const CHANGE_COLLECTION: string = "CHANGE_COLLECTION";
-export const CHANGE_POLYGON_WITH_HOLE: string = "CHANGE_POLYGON_WITH_HOLE";
-
-export const SWITCH_DRAG_CARD: string = "SWITCH_DRAG_CARD";
+// Data
+export const ADD_TICKETS: string = "ADD_TICKETS";
 
 // COLORS
 export const GREEN_COLOR = 'rgb(207, 238, 207)';

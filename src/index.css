@@ -15,4 +15,6 @@ code {
 .root {
   display: flex;
   flex-direction: column;
+  background: #F8F8F8;
+  min-height: 100vh;
 }

@@ -1,8 +1,35 @@
 import {
     ADD_USER, ADD_EVENT,
     CHANGE_USER, CHANGE_LANGUAGE,
-    CHANGE_LOCATION, SWITCH_DRAG_CARD, SWITCH_AUTH
+    CHANGE_LOCATION, SWITCH_AUTH, ADD_TICKETS
 } from "./constants";
+
+export interface IStore {
+    data: {
+        tickets: ITicket[]
+    }
+    app: {
+        user: {
+            email: string
+            role: string
+            filled: boolean
+        }
+        auth: boolean
+        mode: 'light' | 'dark'
+        language: 'ru' | 'en' | 'es'
+        languages: ILang[]
+    }
+    event: EventTarget
+}
+
+export interface ITicket {
+    status: { id: string }
+}
+
+export interface ILang {
+    language: 'ru' | 'en' | 'es'
+    country: 'Ру' | 'En' | 'Es'
+}
 
 export interface IUser {
     name?: string
@@ -43,9 +70,9 @@ export interface ChangeUser {
     user: IUser;
 }
 
-export interface SwitchDragCard {
-    type: typeof SWITCH_DRAG_CARD;
-    drag_card: boolean;
+export interface AddTickets {
+    type: typeof ADD_TICKETS;
+    tickets: any;
 }
 
 export interface defaultStateEvent {
@@ -55,9 +82,9 @@ export interface defaultStateEvent {
 export type ReportsActionTypes = ChangeLocation
     | ChangeLanguage
     | AddEvent
-    | SwitchDragCard
     | AddUser
     | ChangeUser
     | SwitchAuth
+    | AddTickets
 
 export type AppActions = ReportsActionTypes

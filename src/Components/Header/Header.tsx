@@ -177,7 +177,7 @@ export default function Header(props: IHeader) {
     }
 
     return (
-        <Box sx={{flexGrow: 1}}>
+        <Box>
             <ThemeProvider theme={darkTheme}>
                 <AppBar position="static">
                     <Toolbar>
