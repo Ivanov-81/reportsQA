@@ -179,7 +179,7 @@ export default function Header(props: IHeader) {
     return (
         <Box>
             <ThemeProvider theme={darkTheme}>
-                <AppBar position="static">
+                <AppBar position="fixed">
                     <Toolbar>
                         <IconButton
                             size="large"

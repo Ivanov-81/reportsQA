@@ -1,8 +1,17 @@
+import * as React from "react";
 import {
     ADD_USER, ADD_EVENT,
     CHANGE_USER, CHANGE_LANGUAGE,
     CHANGE_LOCATION, SWITCH_AUTH, ADD_TICKETS
 } from "./constants";
+import type {
+    History,
+    InitialEntry,
+    Location,
+    MemoryHistory,
+    Path,
+    To,
+} from "history";
 
 export interface IStore {
     data: {
@@ -77,6 +86,15 @@ export interface AddTickets {
 
 export interface defaultStateEvent {
     event: any
+}
+
+export interface RouterProps {
+    basename?: string;
+    children?: React.ReactNode;
+    location: Partial<Location> | string;
+    navigationType?: NavigationType;
+    navigator: Navigator;
+    static?: boolean;
 }
 
 export type ReportsActionTypes = ChangeLocation
