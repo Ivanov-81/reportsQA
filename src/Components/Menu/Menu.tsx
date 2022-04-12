@@ -1,5 +1,4 @@
-import * as React from 'react';
-import {useState} from "react";
+import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
@@ -76,6 +75,11 @@ export default function Menu(props: IMenu) {
             </List>
         </Box>
     );
+
+    useEffect(() => {
+        console.log('process.env', process.env.REACT_APP_DATA)
+    }, []);
+
 
     return (
         <div>

@@ -44,7 +44,6 @@ export default function Tickets() {
         }
     })((props: any) => {
         let item = JSON.parse(props.children);
-        console.log(item);
         return <div className={props.classes.tile}>
             <h5>{item.summary}</h5>
         </div>
